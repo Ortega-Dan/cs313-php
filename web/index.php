@@ -1,5 +1,5 @@
 <?php
 
-  phpinfo();
-
-?>
+// header('Location: hello.html');
+include('hello.html');
+// phpinfo();
