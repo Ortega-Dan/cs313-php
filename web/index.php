@@ -31,7 +31,7 @@
             Thank you for comming !
             <br>
             <br>
-            As a brief introduction I just like so much programming.
+            As a brief introduction: I just like so much programming.
         </p>
 
         <p><img src="images/face.jpg" width="200" alt="My Picture"></p>
