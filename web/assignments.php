@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <img src="images/face.jpg" width="200" alt="My Profile Picture">
+        <img src="images/football.jpg" width="200" alt="My Profile Picture">
         <h1>Dan Ortega</h1>
     </header>
     <nav>
