@@ -24,7 +24,7 @@
         </ul>
     </main>
     <footer>
-        <p>&copy;2017 &#9816; Dan Anderson Ortega Salinas &#9816; Colombia &#9816; <a href="http://byui.edu/online/">BYU-Idaho
+        <p>&copy;2019 &#9816; Dan Anderson Ortega Salinas &#9816; Colombia &#9816; <a href="http://byui.edu/online/">BYU-Idaho
                 Online Learning</a></p>
     </footer>
 
