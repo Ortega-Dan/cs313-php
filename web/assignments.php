@@ -12,7 +12,7 @@
 <body>
     <header>
         <img src="images/face.jpg" width="200" alt="My Profile Picture">
-        <h1>Dan Anderson Ortega Salinas</h1>
+        <h1>Dan Ortega</h1>
     </header>
     <nav>
         <!-- Here we will have a main menu in the future -->
