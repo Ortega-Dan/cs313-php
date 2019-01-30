@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CS 313 Assignment Portal | Dan Ortega</title>
     <meta name="description" content="Assignment portal page for Dan Ortega in CS 313 class at Brigham Young University Idaho Online">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="styles/assign.css">
 </head>
 

@@ -41,10 +41,12 @@
 
     <footer>
 
-        <?php echo "Your public ip address now is: ".$_SERVER['REMOTE_ADDR']; ?>
+        <?php echo "Your public ip address now is: " . $_SERVER['REMOTE_ADDR']; ?>
         <br>
         <br>
-        <button type="button" onclick="clicked()" class="btn btn-info">Go to assignments</button>
+        
+          <button type="button" onclick="clicked()" class="btn btn-info">Go to assignments</button>
+        
         <br>
     </footer>
 
