@@ -49,6 +49,10 @@ Click on them to add or remove from the cart.
   <a href="index.php?add=cookbook" class="list-group-item  <?php if ($cartset && in_array('cookbook', $_SESSION['cartitems'])) echo 'active';?>">Cookbook</a>
 </div>
 
+<br>
+<br>
+<a href="checkout.php" class="btn btn-success" role="button">Checkout!</a>
+
 <?php
 
 include '../assignmentsmodules/fromuncomplbodytoend.php';
