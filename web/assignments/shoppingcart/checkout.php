@@ -41,7 +41,7 @@ Please add your shipping information:
 
 <br>
 
-  <button type="button" class="btn btn-warning">Return to cart</button>
+<a href="index.php" class="btn btn-warning" role="button">Return to cart</a>
 
 <?php
 
