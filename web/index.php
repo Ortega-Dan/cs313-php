@@ -1,5 +1,7 @@
 <?php
 
-// header('Location: hello.html');
 include('hello.html');
+
+// echo phpversion();
+// header('Location: hello.html');
 // phpinfo();
