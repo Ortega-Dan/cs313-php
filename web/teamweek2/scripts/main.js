@@ -13,5 +13,5 @@ function changeColor() {
 
 function fadeDiv3() {
     // I tried this but didn't work
-    // $("#div3").fadeOut(3000);
+    $("#div3").fadeToggle();
 }
