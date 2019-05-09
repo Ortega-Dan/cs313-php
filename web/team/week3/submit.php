@@ -7,7 +7,7 @@ echo "Comment: " . $_POST["comment"] . "<br>";
 
 echo "<br>";
 
-$places = $_POST['places'];
+$places = $_POST['places']; 
 
 foreach ($places as $place) {
 
