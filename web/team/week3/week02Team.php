@@ -20,25 +20,27 @@ $majors = array("CS" => "Computer Science",
 
         <label>Major</label> <br>
 
-		<?php foreach ($majors as $key => $value) {?>
+        <!-- Really new way to me of having a for loop with html -->
+        <?php foreach ($majors as $key => $value) {?>
 
-        	<input type="radio" name="major" value="<?php echo $key ?>"> <?php echo $value ?> <br>
+        <input type="radio" name="major" value="<?php echo $key ?>"> <?php echo $value ?> <br>
 
-		<?php }?>
+        <?php }?>
 
 
         Comment:<textarea name="comment"></textarea>
 
         <input type="submit" value="Submit">
 
+        <br><br>
 
-        <input type="checkbox" name="NAmerica" value="North America"> North America <br>
-        <input type="checkbox" name="SAmerica" value="South America"> South America <br>
-        <input type="checkbox" name="Europe" value="Europe"> Europe <br>
-        <input type="checkbox" name="Asia" value="Asia"> Asia <br>
-        <input type="checkbox" name="Australia" value="Australia"> Australia <br>
-        <input type="checkbox" name="Africa" value="Africa"> Africa <br>
-        <input type="checkbox" name="Antartica" value="Antarctica"> Antarctica <br>
+        <input type="checkbox" name="places[]" value="North America"> North America <br>
+        <input type="checkbox" name="places[]" value="South America"> South America <br>
+        <input type="checkbox" name="places[]" value="Europe"> Europe <br>
+        <input type="checkbox" name="places[]" value="Asia"> Asia <br>
+        <input type="checkbox" name="places[]" value="Australia"> Australia <br>
+        <input type="checkbox" name="places[]" value="Africa"> Africa <br>
+        <input type="checkbox" name="places[]" value="Antarctica"> Antarctica <br>
 
 
 
