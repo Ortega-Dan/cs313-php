@@ -10,28 +10,12 @@
     <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">-->
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
-    <link rel="icon" type="image/gif" href="animated_favicon1.gif">
-    <!-- <link rel="shortcut icon" href="favicon.ico" > 
-    Made with: http://www.chami.com/html-kit/services/favicon/ -->
 
-</head>
+    <!-- Bootstrap main styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
 
-<body>
-    <main>
-        <h1>Dan Ortega</h1>
+    <link rel="stylesheet" type="text/css" href="../generalassignmentstyles/styles.css">
+    <link rel="shortcut icon" href="../../images/favicon.ico">
 
-        <h3>Hi there ..</h3>
-        <p>Here is just the most simple site possible.
-
-            <br>
-            Thank you for comming !
-        </p>
-
-        <p><img src="images/face.jpg" width="200" alt="My Picture"></p>
-        <br>
-
-    </main>
-</body>
-
-</html>
+    <!--This is intended to allow the ability to implement assignment specific styles-->
