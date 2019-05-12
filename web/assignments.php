@@ -21,7 +21,7 @@
     <main>
         <h2>CS 313 - Assignment Portal</h2>
         <ul>
-            <li>Lesson XX: <a href="assignments/shoppingcart">Assignments comming soon!</a></li>
+            <li>Week 03: <a href="assignments/shoppingcart">Shopping Cart</a></li>
         </ul>
     </main>
     <footer>
