@@ -23,6 +23,9 @@
         <ul>
             <li>Week 03: <a href="assignments/shoppingcart">Shopping Cart</a></li>
         </ul>
+        <ul>
+            <li>Team 05: <a href="assignments/shoppingcart">Shopping Cart</a></li>
+        </ul>
     </main>
     <footer>
         <p>&copy;2019 &#9816; Dan Anderson Ortega Salinas &#9816; Colombia &#9816; <a href="http://byui.edu/online/">BYU-Idaho
