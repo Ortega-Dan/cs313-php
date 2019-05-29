@@ -1,3 +1,5 @@
+<h1>Scripture Resources</h1>
+
 <?php
 
 $dbUrl = getenv('DATABASE_URL');
@@ -12,12 +14,13 @@ $dbName = ltrim($dbopts["path"], '/');
 
 $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-$stmt = $db->query('select book,chapter from testandteam.scriptures');
+$stmt = $db->query('select book,chapter,verse,"content" from testandteam.scriptures');
 
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-foreach ($result as $row) {
-    echo $row['book'];
-}
+$stmt->closeCursor();
 
+foreach ($result as $row) {
+    echo "<b>$row[book] $row[chapter]:$row[verse]</b> - \"$row[content]\"<br>";
+}
 
