@@ -1,3 +1,12 @@
+<?php
+include '../dbaccess/dbconnect.php';
+
+$filtervalue = filter_input(INPUT_POST, 'filter', FILTER_SANITIZE_STRING);
+if ($filtervalue == null) {
+    $filtervalue = "";
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +17,12 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
     <!-- Bootstrap main styles -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="../styles/styles.css">
     <link rel="shortcut icon" href="../images/favicon.ico">
@@ -16,9 +30,44 @@
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <h1>Hi <br> Welcome to our HHRR System</h1>
+    </header>
     <main>
-        <h1>Hi</h1>
+
+
+        <form class="form-inline md-form mr-auto mb-4" action="../view/index.php" method="POST">
+            <input <?php if ($filtervalue != "") {
+                        echo " value='$filtervalue' ";
+                    } ?> class="form-control mr-sm-2" type="text" placeholder="Enter Name Or Part of a Name" name="filter" aria-label="Search">
+            <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Filter Results</button>
+        </form>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Entity</th>
+                    <th scope="col">Details</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php
+
+                $array = getEntitiesByName($filtervalue);
+
+                foreach ($array as $each) {
+                    echo "<tr><td>$each[name]</td>";
+                    echo "<td>$each[entity] </i></td>";
+                    echo "<td><a class='btn btn-outline-primary' href='#' role='button'><i class='fas fa-search' aria-hidden='true'></a></td></tr>";
+                }
+
+                ?>
+
+            </tbody>
+        </table>
+
     </main>
 
     <footer>
@@ -29,12 +78,14 @@
 
 
     <!-- Bootstrap Scripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
-    </script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/js/mdb.min.js"></script>
 </body>
 
 </html>
