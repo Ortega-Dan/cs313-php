@@ -24,7 +24,7 @@
             <li>Week 03: <a href="assignments/shoppingcart">Shopping Cart</a></li>
         </ul>
         <ul>
-            <li>Team 05: <a href="assignments/shoppingcart">Shopping Cart</a></li>
+            <li>Week 05: <a href="assignments/week5">HH RR System Start</a></li>
         </ul>
     </main>
     <footer>
