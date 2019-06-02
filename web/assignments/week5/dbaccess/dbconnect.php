@@ -31,10 +31,13 @@ function getEntitiesByName($filtervalue)
 function getEntityDetails($type, $id)
 {
     $dblink = getMyConnection();
-    $stmt = $dblink->query('select *, (select physical_address from address where ' . $type . '_id = ' . $id . ')
+
+    $querystring = 'select *, (select physical_address from address where ' . $type . '_id = ' . $id . ')
     , (select email_address from email where ' . $type . '_id = ' . $id . ')
     , (select phone_number from phone where ' . $type . '_id = ' . $id . ')
-    from Employee where keyid = ' . $id . '');
+    from ' . $type . ' where keyid = ' . $id . '';
 
-    return $stmt->fetch();
+    $stmt = $dblink->query($querystring);
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }

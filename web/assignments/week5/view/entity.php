@@ -1,12 +1,13 @@
 <?php
 include '../dbaccess/dbconnect.php';
 
-$id = filter_input(INPUT_GET,'id',FILTER_SANITIZE_NUMBER_INT);
-$type = filter_input(INPUT_GET,'type', FILTER_SANITIZE_STRING);
-if($type != 'Client' && $type!='Employee'){
+$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+$type = filter_input(INPUT_GET, 'type', FILTER_SANITIZE_STRING);
+if ($type != 'Client' && $type != 'Employee') {
     $type = 'Error';
 }
 
+$detarray = getEntityDetails($type, $id);
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,10 +33,24 @@ if($type != 'Client' && $type!='Employee'){
 
 <body>
     <header>
-        <?php echo "<h1>$type Details</h1>" ?>
+        <?php echo "<br><h1>$type Details</h1><br>" ?>
     </header>
     <main>
-<h2></h2>
+        <?php echo "<h2>$detarray[name]</h2><br>";
+
+        echo "<table class='table table-hover'><tbody>";
+
+        foreach ($detarray as $key => $value) {
+            if ($key == "keyid") {
+                continue;
+            }
+            echo "<tr> <td>$key</td> <td>$value</td> </tr>";
+        }
+
+        echo "</tbody></table>";
+
+        ?>
+        <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Update Record</button>
     </main>
 
     <footer>
