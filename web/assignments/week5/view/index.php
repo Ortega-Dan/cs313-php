@@ -60,7 +60,7 @@ if ($filtervalue == null) {
                 foreach ($array as $each) {
                     echo "<tr><td>$each[name]</td>";
                     echo "<td>$each[entity] </i></td>";
-                    echo "<td><a class='btn btn-outline-primary' href='#' role='button'><i class='fas fa-search' aria-hidden='true'></a></td></tr>";
+                    echo "<td><a class='btn btn-outline-primary' href='entity.php?type=$each[entity]&id=$each[keyid]' role='button'><i class='fas fa-search' aria-hidden='true'></a></td></tr>";
                 }
 
                 ?>

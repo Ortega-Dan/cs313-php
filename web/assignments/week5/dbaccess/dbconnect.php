@@ -19,9 +19,9 @@ function getEntitiesByName($filtervalue)
 {
     $dblink = getMyConnection();
 
-    $stmt = $dblink->query("select * from (select name, 'Employee' entity from employee where keyid != 0
+    $stmt = $dblink->query("select * from (select name, 'Employee' entity, keyid from employee where keyid != 0
     union all
-    select name, 'Client' from client where keyid != 0)vv where vv.name ilike '%$filtervalue%' order by name");
+    select name, 'Client', keyid from client where keyid != 0)vv where vv.name ilike '%$filtervalue%' order by name");
 
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
