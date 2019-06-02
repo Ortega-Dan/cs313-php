@@ -1,5 +1,12 @@
 <?php
 include '../dbaccess/dbconnect.php';
+
+$id = filter_input(INPUT_GET,'id',FILTER_SANITIZE_NUMBER_INT);
+$type = filter_input(INPUT_GET,'type', FILTER_SANITIZE_STRING);
+if($type != 'Client' && $type!='Employee'){
+    $type = 'Error';
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,10 +32,10 @@ include '../dbaccess/dbconnect.php';
 
 <body>
     <header>
-        <h1>Client or Employee Details</h1>
+        <?php echo "<h1>$type Details</h1>" ?>
     </header>
     <main>
-
+<h2></h2>
     </main>
 
     <footer>

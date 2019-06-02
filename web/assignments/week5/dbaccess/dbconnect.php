@@ -26,3 +26,15 @@ function getEntitiesByName($filtervalue)
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+
+function getEntityDetails($type, $id)
+{
+    $dblink = getMyConnection();
+    $stmt = $dblink->query('select *, (select physical_address from address where ' . $type . '_id = ' . $id . ')
+    , (select email_address from email where ' . $type . '_id = ' . $id . ')
+    , (select phone_number from phone where ' . $type . '_id = ' . $id . ')
+    from Employee where keyid = ' . $id . '');
+
+    return $stmt->fetch();
+}
