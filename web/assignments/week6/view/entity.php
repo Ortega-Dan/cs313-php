@@ -8,6 +8,13 @@ if ($type != 'Client' && $type != 'Employee') {
 }
 
 $detarray = getEntityDetails($type, $id);
+
+// This variable will tell us the mode of the page
+$edit = filter_input(INPUT_POST, 'edit', FILTER_SANITIZE_STRING);
+
+if ($edit == 'submit') {
+    // TODO HERE YOUR LOGIC TO UPDATE DATA !!!!! (for now)
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,21 +43,51 @@ $detarray = getEntityDetails($type, $id);
         <?php echo "<br><h1>$type Details</h1><br>" ?>
     </header>
     <main>
-        <?php echo "<h2>$detarray[name]</h2><br>";
 
-        echo "<table class='table table-hover'><tbody>";
+        <?php echo "<h2>$detarray[name]</h2><br>"; ?>
+        <form class="form-inline md-form mr-auto mb-4" action="#" method="POST">
+            <?php
+            echo "<table class='table table-hover'><tbody>";
 
-        foreach ($detarray as $key => $value) {
-            if ($key == "keyid") {
-                continue;
+            // Showing the data for the entity
+            foreach ($detarray as $key => $value) {
+                if ($key == "keyid") {
+                    continue;
+                }
+                echo "<tr> <td>$key</td> <td>";
+
+                // If we are in edit mode show the data as input fields for the form
+                if ($edit == 'true') {
+                    echo "<input type='text' value='$value' name='$key' >";
+                } else {
+                    echo $value;
+                }
+
+                echo "</td> </tr>";
             }
-            echo "<tr> <td>$key</td> <td>$value</td> </tr>";
-        }
 
-        echo "</tbody></table>";
+            echo "</tbody></table>";
 
-        ?>
-        <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Update Record</button>
+            // Handling the setter (on input field) for the mode the next time the button is clicked
+            echo "<input type='text' value='";
+            if ($edit == 'true') {
+                echo "submit";
+            } elseif ($edit == null || $edit == 'submit') {
+                echo "true";
+            } else echo "false";
+            echo "' name='edit' hidden>";
+
+            ?>
+            <button id="updatebutton" class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">
+                <?php
+                // Showing the right label for the button according to the mode
+                if ($edit == 'true')
+                    echo "Submit";
+                else
+                    echo "Update Record";
+                ?>
+            </button>
+        </form>
     </main>
 
     <footer>
