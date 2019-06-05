@@ -21,10 +21,13 @@
     <main>
         <h2>CS 313 - Assignment Portal</h2>
         <ul>
-            <li>Week 03: <a href="assignments/shoppingcart">Shopping Cart</a></li>
+            <li>Week 3: <a href="assignments/shoppingcart">Shopping Cart</a></li>
         </ul>
         <ul>
-            <li>Week 05: <a href="assignments/week5">HH RR System Start</a></li>
+            <li>Week 5: <a href="assignments/week5">HH RR System Start</a></li>
+        </ul>
+        <ul>
+            <li>Week 6: <a href="assignments/week6">HH RR System Update</a></li>
         </ul>
     </main>
     <footer>
