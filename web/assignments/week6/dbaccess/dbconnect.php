@@ -45,15 +45,6 @@ function getEntityDetails($type, $id)
 
 function updateEntity($type, $id, $updatedData)
 {
-    $messageBuilder = null;
-
-    // IMPLEMENT DATA VALIDATION HERE
-
-    if (isset($messageBuilder)) {
-        return $messageBuilder;
-    }
-
-
     // Getting ready for DB transactions
     $dblink = getMyConnection();
 
@@ -102,6 +93,4 @@ function updateEntity($type, $id, $updatedData)
     $greaterQuery .= " where keyid = $id";
 
     $dblink->query($greaterQuery);
-
-    return null;
 }

@@ -3,16 +3,19 @@ include '../dbaccess/dbconnect.php';
 
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 $type = filter_input(INPUT_GET, 'type', FILTER_SANITIZE_STRING);
-if ($type != 'Client' && $type != 'Employee') {
-    $type = 'Error';
-}
+
+$type = ($type != 'Client' && $type != 'Employee') ? 'Error' : $type;
 
 // This variable will tell us the mode of the page
 $edit = filter_input(INPUT_POST, 'edit', FILTER_SANITIZE_STRING);
 
 $errormsg = null;
 if ($edit == 'submit') {
-    $errormsg = updateEntity($type, $id, $_POST);
+    $errormsg = validateEntity($_POST);
+    
+    if (!isset($errormsg)) {
+        updateEntity($type, $id, $_POST);
+    }
 }
 
 $detarray = getEntityDetails($type, $id);
