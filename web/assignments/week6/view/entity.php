@@ -1,5 +1,6 @@
 <?php
 include '../dbaccess/dbconnect.php';
+include '../controlhelpers/entityhelp.php';
 
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 $type = filter_input(INPUT_GET, 'type', FILTER_SANITIZE_STRING);
@@ -12,9 +13,11 @@ $edit = filter_input(INPUT_POST, 'edit', FILTER_SANITIZE_STRING);
 $errormsg = null;
 if ($edit == 'submit') {
     $errormsg = validateEntity($_POST);
-    
+
     if (!isset($errormsg)) {
         updateEntity($type, $id, $_POST);
+    } else {
+        $edit = 'true';
     }
 }
 
@@ -46,7 +49,7 @@ $detarray = getEntityDetails($type, $id);
     <header>
         <?php echo "<br><h1>$type Details</h1><br>";
         if (isset($errormsg)) {
-            echo "<span class='errormsg'>$errormsg</span><br><br>";
+            echo "<span class='errormsg'>$errormsg</span><br>";
         }
         ?>
     </header>
