@@ -1,3 +1,11 @@
+drop table address;
+drop table phone;
+drop table email;
+drop table assignment;
+drop table employee;
+drop table client;
+
+
 create table employee
 (
     keyid      serial      not null
