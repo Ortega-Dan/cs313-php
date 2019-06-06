@@ -93,6 +93,7 @@ $detarray = getEntityDetails($type, $id);
                 ?>
             </button>
         </form>
+        <a href="." class="btn btn-outline-primary btn-rounded btn-sm my-0 waves-effect waves-light">Go back to List</a>
     </main>
 
     <footer>

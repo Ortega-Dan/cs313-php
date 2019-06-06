@@ -1,3 +1,49 @@
+create table employee
+(
+    keyid      serial      not null
+        constraint employee_pk
+            primary key,
+    name       varchar(50) not null,
+    personalid integer     not null,
+    entrydate  date        not null
+);
+
+create unique index employee_personalid_uindex
+    on employee (personalid);
+
+INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (0, 'null-employee', 0, '1900-01-01');
+INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (1, 'Robin Williams', 4813245, '1989-04-11');
+INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (2, 'Abraham Lincoln', 3758643, '1982-01-02');
+INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (3, 'Oprah Someone', 84153, '1963-12-29');
+INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (4, 'Michael Jackson', 79843749, '1991-01-22');
+INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (5, 'Taylor Swift', 328537, '2017-01-22');
+INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (6, 'Joseph Smith', 39451, '1820-04-04');
+INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (7, 'Steed Parker', 6963654, '2008-12-23');
+INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (8, 'Ashley Gonzalez', 1915615, '2015-09-12');
+
+create table client
+(
+    keyid    serial      not null
+        constraint client_pk
+            primary key,
+    name     varchar(50) not null,
+    socialid integer     not null
+);
+
+create unique index client_name_uindex
+    on client (name);
+
+create unique index client_socialid_uindex
+    on client (socialid);
+
+INSERT INTO public.client (keyid, name, socialid) VALUES (0, 'null-client', 0);
+INSERT INTO public.client (keyid, name, socialid) VALUES (1, 'Brinks', 789465);
+INSERT INTO public.client (keyid, name, socialid) VALUES (2, 'CocaCola', 1981561);
+INSERT INTO public.client (keyid, name, socialid) VALUES (3, 'Level', 784539);
+INSERT INTO public.client (keyid, name, socialid) VALUES (4, 'Alpina', 321458);
+INSERT INTO public.client (keyid, name, socialid) VALUES (5, 'Addidas', 91569);
+INSERT INTO public.client (keyid, name, socialid) VALUES (6, 'PriceSmart', 54918);
+
 create table address
 (
     keyid            serial      not null
@@ -46,29 +92,6 @@ INSERT INTO public.assignment (keyid, client_id, employee_id) VALUES (7, 6, 7);
 INSERT INTO public.assignment (keyid, client_id, employee_id) VALUES (8, 4, 1);
 INSERT INTO public.assignment (keyid, client_id, employee_id) VALUES (9, 2, 4);
 
-create table client
-(
-    keyid    serial      not null
-        constraint client_pk
-            primary key,
-    name     varchar(50) not null,
-    socialid integer     not null
-);
-
-create unique index client_name_uindex
-    on client (name);
-
-create unique index client_socialid_uindex
-    on client (socialid);
-
-INSERT INTO public.client (keyid, name, socialid) VALUES (0, 'null-client', 0);
-INSERT INTO public.client (keyid, name, socialid) VALUES (1, 'Brinks', 789465);
-INSERT INTO public.client (keyid, name, socialid) VALUES (2, 'CocaCola', 1981561);
-INSERT INTO public.client (keyid, name, socialid) VALUES (3, 'Level', 784539);
-INSERT INTO public.client (keyid, name, socialid) VALUES (4, 'Alpina', 321458);
-INSERT INTO public.client (keyid, name, socialid) VALUES (5, 'Addidas', 91569);
-INSERT INTO public.client (keyid, name, socialid) VALUES (6, 'PriceSmart', 54918);
-
 create table email
 (
     keyid         serial      not null
@@ -92,29 +115,6 @@ INSERT INTO public.email (keyid, client_id, employee_id, email_address) VALUES (
 INSERT INTO public.email (keyid, client_id, employee_id, email_address) VALUES (4, 0, 2, 'abraham.lincoln@usa.gov');
 INSERT INTO public.email (keyid, client_id, employee_id, email_address) VALUES (5, 0, 3, 'oprah@music.net');
 INSERT INTO public.email (keyid, client_id, employee_id, email_address) VALUES (6, 6, 0, 'sales@pricesmart.co');
-
-create table employee
-(
-    keyid      serial      not null
-        constraint employee_pk
-            primary key,
-    name       varchar(50) not null,
-    personalid integer     not null,
-    entrydate  date        not null
-);
-
-create unique index employee_personalid_uindex
-    on employee (personalid);
-
-INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (0, 'null-employee', 0, '1900-01-01');
-INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (1, 'Robin Williams', 4813245, '1989-04-11');
-INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (2, 'Abraham Lincoln', 3758643, '1982-01-02');
-INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (3, 'Oprah Someone', 84153, '1963-12-29');
-INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (4, 'Michael Jackson', 79843749, '1991-01-22');
-INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (5, 'Taylor Swift', 328537, '2017-01-22');
-INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (6, 'Joseph Smith', 39451, '1820-04-04');
-INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (7, 'Steed Parker', 6963654, '2008-12-23');
-INSERT INTO public.employee (keyid, name, personalid, entrydate) VALUES (8, 'Ashley Gonzalez', 1915615, '2015-09-12');
 
 create table phone
 (
