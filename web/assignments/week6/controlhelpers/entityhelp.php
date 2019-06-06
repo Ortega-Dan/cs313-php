@@ -15,11 +15,14 @@ function validateEntity($array)
             if (!preg_match('/^\d\d\d\d-\d\d-\d\d$/', $value)) {
                 $messageBuilder .= "Data for \"$key\" must be in the YYYY-MM-DD format<br>";
             }
-        } else if (strpos($key, 'email_add') !== false) {
+        } else if (strpos($key, 'email') !== false) {
             // Validation email
             if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
                 $messageBuilder .= "Data for \"$key\" must have an email format<br>";
             }
+        }
+        if (strlen($value) > 40) {
+            $messageBuilder .= "The \"$key\" field can't be longer than 40 characters<br>";
         }
     }
 

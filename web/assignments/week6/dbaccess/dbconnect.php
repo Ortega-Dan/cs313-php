@@ -52,6 +52,9 @@ function updateEntity($type, $id, $updatedData)
     $greaterQuery = "update $type set ";
 
     foreach ($updatedData as $key => $value) {
+        // SANITIZING ALL INPUT
+        $value = filter_var($value, FILTER_SANITIZE_STRING);
+
         $query = "";
         switch ($key) {
             case 'physical_address':
