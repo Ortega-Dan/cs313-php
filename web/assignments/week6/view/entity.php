@@ -12,8 +12,11 @@ $detarray = getEntityDetails($type, $id);
 // This variable will tell us the mode of the page
 $edit = filter_input(INPUT_POST, 'edit', FILTER_SANITIZE_STRING);
 
+$errormsg = null;
 if ($edit == 'submit') {
     // TODO HERE YOUR LOGIC TO UPDATE DATA !!!!! (for now)
+    // IT WILL HAVE SERVER SIDE VALIDATION AND AN ERROR MESSAGE will be set if 
+    // data is too long or if format is not met for date (YYYY-MM-DD) or IDs (integers)
 }
 ?>
 <!DOCTYPE html>
@@ -40,7 +43,11 @@ if ($edit == 'submit') {
 
 <body>
     <header>
-        <?php echo "<br><h1>$type Details</h1><br>" ?>
+        <?php echo "<br><h1>$type Details</h1><br>";
+        if (isset($errormsg)) {
+            echo "<span class='errormsg'>Error Message Here</span><br><br>";
+        }
+        ?>
     </header>
     <main>
 
