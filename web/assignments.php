@@ -29,6 +29,9 @@
         <ul>
             <li>Week 6: <a href="assignments/week6">HH RR System Update</a></li>
         </ul>
+        <ul>
+            <li>Week 7: <a href="assignments/week7">HH RR System Completed</a></li>
+        </ul>
     </main>
     <footer>
         <p>&copy;2019 &#9816; Dan Anderson Ortega Salinas &#9816; Colombia &#9816; <a href="http://byui.edu/online/">BYU-Idaho
