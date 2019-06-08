@@ -144,6 +144,7 @@ INSERT INTO email (keyid, client_id, employee_id, email_address) VALUES (13, 0, 
 INSERT INTO email (keyid, client_id, employee_id, email_address) VALUES (15, 0, 5, 'fancyhousie@taylorswift.com');
 
 
+
 create table phone
 (
     keyid        serial      not null
