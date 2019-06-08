@@ -144,7 +144,6 @@ INSERT INTO email (keyid, client_id, employee_id, email_address) VALUES (13, 0, 
 INSERT INTO email (keyid, client_id, employee_id, email_address) VALUES (15, 0, 5, 'fancyhousie@taylorswift.com');
 
 
-
 create table phone
 (
     keyid        serial      not null
@@ -176,3 +175,17 @@ INSERT INTO phone (keyid, client_id, employee_id, phone_number) VALUES (12, 2, 0
 INSERT INTO phone (keyid, client_id, employee_id, phone_number) VALUES (13, 0, 6, '789456132');
 INSERT INTO phone (keyid, client_id, employee_id, phone_number) VALUES (14, 0, 7, '123456789');
 INSERT INTO phone (keyid, client_id, employee_id, phone_number) VALUES (17, 0, 5, 'facetime:taylorswift');
+
+
+create table authentication
+(
+    keyid    serial      not null
+        constraint authentication_pk primary key,
+    username varchar(20) not null,
+    password varchar(100)
+);
+
+create unique index authentication_username_uindex
+    on authentication (username);
+
+INSERT INTO authentication (keyid, username, password) VALUES (1, 'default-user', 'HASHEDPASSWORDHERELATER');
