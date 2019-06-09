@@ -59,7 +59,32 @@ if ($filtervalue == null) {
                         echo " value='$filtervalue' ";
                     } ?> class="form-control mr-sm-2" type="text" placeholder="Enter Name Or Part of a Name" name="filter" aria-label="Search">
             <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Filter Results</button>
+
+            <button type="button" class="btn btn-outline-default btn-sm my-0 waves-effect waves-light" data-toggle="modal" data-target="#mymodal">
+                New entity
+            </button>
         </form>
+        <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog modal-sm" role="document">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title w-100" id="myModalLabel">Which...</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        What kind of entity do you want to add ?
+                    </div>
+                    <div class="modal-footer">
+                        <a href="newentity.php?type=client" class="btn btn-outline-default btn-rounded btn-sm my-0 waves-effect waves-light">Client</a>
+                        <a href="newentity.php?type=employee" class="btn btn-outline-info btn-rounded btn-sm my-0 waves-effect waves-light">Employee</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <table class="table table-hover">
             <thead>
