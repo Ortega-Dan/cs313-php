@@ -1,5 +1,16 @@
 <?php
-include '../dbaccess/dbconnect.php';
+session_start();
+
+// Logging out user
+$logout = filter_input(INPUT_POST, 'logout', FILTER_SANITIZE_STRING);
+// And kikking out non-logged users
+if (isset($logout) || !isset($_SESSION['user'])) {
+    session_destroy();
+    header('Location: signin.php');
+    exit();
+}
+
+include '../dbaccess/entitiesdb.php';
 
 $filtervalue = filter_input(INPUT_POST, 'filter', FILTER_SANITIZE_STRING);
 if ($filtervalue == null) {
@@ -31,6 +42,12 @@ if ($filtervalue == null) {
 
 <body>
     <header>
+        <form action="." method="POST">
+            <input name="logout" value="true" hidden>
+            <button id="logout" class="btn btn-outline-dark btn-rounded btn-sm my-0 waves-effect waves-light">
+                LOG OUT <?php echo $_SESSION['user'] ?> .<i class="fas fa-sign-out-alt"></i>
+            </button>
+        </form>
         <br>
         <h1>Hi <br> Welcome to our HHRR System</h1>
     </header>

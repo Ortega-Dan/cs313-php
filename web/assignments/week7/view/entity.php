@@ -1,5 +1,15 @@
 <?php
-include '../dbaccess/dbconnect.php';
+
+session_start();
+
+// Kicking out non-logged users
+if (!isset($_SESSION['user'])) {
+    session_destroy();
+    header('Location: signin.php');
+    exit();
+}
+
+include '../dbaccess/entitiesdb.php';
 include '../controlhelpers/entityhelp.php';
 
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
@@ -47,6 +57,12 @@ $detarray = getEntityDetails($type, $id);
 
 <body>
     <header>
+        <form action="." method="POST">
+            <input name="logout" value="true" hidden>
+            <button id="logout" class="btn btn-outline-dark btn-rounded btn-sm my-0 waves-effect waves-light">
+                LOG OUT <?php echo $_SESSION['user'] ?> .<i class="fas fa-sign-out-alt"></i>
+            </button>
+        </form>
         <?php echo "<br><h1>$type Details</h1><br>";
         if (isset($errormsg)) {
             echo "<span class='errormsg'>$errormsg</span><br>";
