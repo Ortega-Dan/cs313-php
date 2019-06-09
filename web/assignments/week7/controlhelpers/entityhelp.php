@@ -24,6 +24,12 @@ function validateEntity($array)
         if (strlen($value) > 40) {
             $messageBuilder .= "The \"$key\" field can't be longer than 40 characters<br>";
         }
+        if (strpos($key,'name')!==false) {
+            $value = trim($value);
+            if ($value == null || $value == "") {
+                $messageBuilder .= "The \"$key\" field can't be empty<br>";
+            }
+        }
     }
 
     return $messageBuilder == "" ? null : $messageBuilder;

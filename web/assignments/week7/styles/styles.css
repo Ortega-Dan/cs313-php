@@ -20,3 +20,8 @@ span.errormsg {
     color: #f00;
     font-size: 1.2em;
 }
+
+span.infomsg {
+    color: #00f;
+    font-size: 1.2em;
+}
