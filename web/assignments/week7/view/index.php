@@ -79,8 +79,8 @@ if ($filtervalue == null) {
                         What kind of entity do you want to add ?
                     </div>
                     <div class="modal-footer">
-                        <a href="newentity.php?type=client" class="btn btn-outline-default btn-rounded btn-sm my-0 waves-effect waves-light">Client</a>
-                        <a href="newentity.php?type=employee" class="btn btn-outline-info btn-rounded btn-sm my-0 waves-effect waves-light">Employee</a>
+                        <a href="newentity.php?type=Client" class="btn btn-outline-default btn-rounded btn-sm my-0 waves-effect waves-light">Client</a>
+                        <a href="newentity.php?type=Employee" class="btn btn-outline-info btn-rounded btn-sm my-0 waves-effect waves-light">Employee</a>
                     </div>
                 </div>
             </div>

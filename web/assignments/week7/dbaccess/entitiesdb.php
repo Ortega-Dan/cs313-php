@@ -84,3 +84,15 @@ function updateEntity($type, $id, $updatedData)
 
     $dblink->query($greaterQuery);
 }
+
+
+function getDetailsForNewEntity($type){
+    $dblink = getMyConnection();
+
+    $querystring = 'select *, null physical_address, null email_address, null phone_number
+    from '.$type.' where keyid = 0';
+
+    $stmt = $dblink->query($querystring);
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
